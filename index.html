@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Fake Handle Monitoring System</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: white;
+}
+
+header {
+    padding: 22px 35px;
+    background: #111827;
+    border-bottom: 1px solid #263247;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+header p {
+    color: #94a3b8;
+    margin: 6px 0 0;
+}
+
+.container {
+    padding: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: #151f32;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #263247;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.card p {
+    color: #94a3b8;
+    margin-bottom: 0;
+}
+
+.panel {
+    background: #151f32;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #263247;
+    margin-bottom: 25px;
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+label {
+    color: #94a3b8;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 7px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+}
+
+.checks {
+    margin-top: 18px;
+}
+
+.checks label {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.checks input {
+    width: auto;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result {
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.result-score {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.CRITICAL {
+    color: #ef4444;
+}
+
+.HIGH {
+    color: #f97316;
+}
+
+.MEDIUM {
+    color: #eab308;
+}
+
+.LOW {
+    color: #22c55e;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: #94a3b8;
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #334155;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #263247;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.badge.CRITICAL {
+    background: #991b1b;
+    color: white;
+}
+
+.badge.HIGH {
+    background: #9a3412;
+    color: white;
+}
+
+.badge.MEDIUM {
+    background: #854d0e;
+    color: white;
+}
+
+.badge.LOW {
+    background: #166534;
+    color: white;
+}
+
+.reason {
+    font-size: 12px;
+    margin: 3px 0;
+}
+
+.note {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.success {
+    background: #14532d;
+    padding: 12px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🛡️ Fake Handle Monitoring System</h1>
+
+<p>
+Digital Media & Strategic Communication —
+Daily Monitoring Dashboard
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- STATISTICS -->
+
+<div class="cards">
+
+<div class="card">
+<h2>{{ total }}</h2>
+<p>Handles Monitored</p>
+</div>
+
+<div class="card">
+<h2>{{ low }}</h2>
+<p>Low Risk</p>
+</div>
+
+<div class="card">
+<h2>{{ medium }}</h2>
+<p>Medium Risk</p>
+</div>
+
+<div class="card">
+<h2>{{ high }}</h2>
+<p>High Risk</p>
+</div>
+
+<div class="card">
+<h2>{{ critical }}</h2>
+<p>Critical</p>
+</div>
+
+</div>
+
+
+
+<!-- LIVE ANALYZER -->
+
+<div class="panel">
+
+<h2>🔍 Analyze a Social Media Handle</h2>
+
+<p class="note">
+Enter publicly observable information about a handle.
+The system provides an explainable risk assessment.
+</p>
+
+
+<form method="POST">
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label>Platform</label>
+
+<select name="platform">
+
+<option>X</option>
+<option>Instagram</option>
+<option>Facebook</option>
+<option>YouTube</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>Handle</label>
+
+<input
+type="text"
+name="handle"
+placeholder="@example_handle"
+required
+>
+
+</div>
+
+
+<div>
+
+<label>Display Name</label>
+
+<input
+type="text"
+name="display_name"
+placeholder="Example Official"
+>
+
+</div>
+
+
+<div>
+
+<label>Account Age (days)</label>
+
+<input
+type="number"
+name="account_age"
+placeholder="30"
+min="0"
+>
+
+</div>
+
+
+<div>
+
+<label>Followers</label>
+
+<input
+type="number"
+name="followers"
+placeholder="1000"
+min="0"
+>
+
+</div>
+
+
+<div>
+
+<label>Following</label>
+
+<input
+type="number"
+name="following"
+placeholder="500"
+min="0"
+>
+
+</div>
+
+
+</div>
+
+
+<div class="checks">
+
+<label>
+<input type="checkbox" name="official_claim">
+Claims official affiliation
+</label>
+
+
+<label>
+<input type="checkbox" name="verified">
+Verified
+</label>
+
+
+<label>
+<input type="checkbox" name="external_link_match">
+External link matches reference
+</label>
+
+</div>
+
+
+<button type="submit">
+🔍 ANALYZE HANDLE
+</button>
+
+
+</form>
+
+
+{% if analysis %}
+
+<div class="result">
+
+<h2>Analysis Result</h2>
+
+
+<div class="result-score">
+{{ analysis.score }}/100
+</div>
+
+
+<h3 class="{{ analysis.level }}">
+{{ analysis.level }} RISK
+</h3>
+
+
+<p>
+<strong>Handle:</strong>
+@{{ analysis.handle }}
+</p>
+
+
+<p>
+<strong>Platform:</strong>
+{{ analysis.platform }}
+</p>
+
+
+<p>
+<strong>Username Similarity:</strong>
+{{ analysis.similarity }}%
+</p>
+
+
+<h3>Detected Indicators</h3>
+
+
+{% if analysis.reasons %}
+
+{% for reason in analysis.reasons %}
+
+<div class="reason">
+✓ {{ reason }}
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="reason">
+✓ No major suspicious indicators detected
+</div>
+
+{% endif %}
+
+
+<form method="POST" action="/add">
+
+<input type="hidden" name="handle" value="{{ analysis.handle }}">
+
+<input type="hidden" name="platform" value="{{ analysis.platform }}">
+
+<input type="hidden" name="display_name" value="{{ analysis.display_name }}">
+
+<input type="hidden" name="score" value="{{ analysis.score }}">
+
+<input type="hidden" name="level" value="{{ analysis.level }}">
+
+<input type="hidden" name="similarity" value="{{ analysis.similarity }}">
+
+
+{% for reason in analysis.reasons %}
+
+<input type="hidden" name="reasons" value="{{ reason }}">
+
+{% endfor %}
+
+
+<button type="submit">
+➕ ADD TO MONITORING
+</button>
+
+</form>
+
+
+<p class="note">
+⚠ This result indicates potential risk and requires human verification.
+</p>
+
+
+</div>
+
+{% endif %}
+
+</div>
+
+
+
+{% if added %}
+
+<div class="success">
+✅ Handle successfully added to monitoring.
+</div>
+
+{% endif %}
+
+
+
+<!-- MONITORING TABLE -->
+
+<div class="panel">
+
+<h2>📊 Flagged Handle Monitoring</h2>
+
+<p class="note">
+Handles are ranked using multiple publicly observable indicators.
+</p>
+
+
+<table>
+
+<tr>
+
+<th>Handle</th>
+<th>Platform</th>
+<th>Similarity</th>
+<th>Risk Score</th>
+<th>Risk Level</th>
+<th>Indicators</th>
+
+</tr>
+
+
+{% for item in results %}
+
+<tr>
+
+<td>
+<strong>@{{ item.handle }}</strong>
+</td>
+
+<td>
+{{ item.platform }}
+</td>
+
+<td>
+{{ item.similarity }}%
+</td>
+
+<td>
+<strong>{{ item.score }}/100</strong>
+</td>
+
+<td>
+
+<span class="badge {{ item.level }}">
+{{ item.level }}
+</span>
+
+</td>
+
+<td>
+
+{% for reason in item.reasons %}
+
+<div class="reason">
+• {{ reason }}
+</div>
+
+{% endfor %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+<p class="note">
+⚠ Prototype output is an assessment aid. Final verification
+should be performed by an authorised human reviewer.
+</p>
+
+</div>
+
+
+</div>
+
+</body>
+
+</html>

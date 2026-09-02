@@ -1,0 +1,11 @@
+handle,platform,display_name,bio,account_age_days,followers,following,verified,official_claim,external_link_match
+army_updates_india,X,Army Updates India,"Indian defence updates",120,5400,320,False,False,True
+indianarmy_official_test,X,Indian Army Official,"Official Indian Army information",18,820,145,False,True,False
+indian_army_help,Instagram,Indian Army Help,"Official support and assistance",9,230,510,False,True,False
+defence_news_india,X,Defence News India,"Defence news and analysis",800,12000,900,False,False,True
+india_army_official,X,Indian Army,"Official Indian Army",30,1500,700,False,True,False
+defence_updates,X,Defence Updates,"Defence news and updates",450,7600,640,False,False,True
+indianarmy_support,Instagram,Indian Army Support,"Official assistance",15,410,620,False,True,False
+bharat_defence_news,X,Bharat Defence News,"Indian defence information",600,8900,430,False,False,True
+army_information,X,Army Information,"Information and analysis",900,15000,1200,False,False,True
+official_indian_army_help,Instagram,Official Indian Army Help,"Official Indian Army help",7,90,300,False,True,False
