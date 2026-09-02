@@ -1,1 +1,5 @@
-
+handle,platform,display_name,bio,account_age_days,followers,following,verified,official_claim,external_link_match
+army_updates_india,X,Army Updates India,Indian defence updates,120,5400,320,False,False,True
+indianarmy_official_test,X,Indian Army official,official Indian Army information,18,820,145,False,True,False
+indian_army_help,Instagram,Indian Army Help,official support and assistance,9,230,510,False,True,False
+defence_news_india,X,Defence News India,Defence news and analysis,800,12000,900,False,False,True
