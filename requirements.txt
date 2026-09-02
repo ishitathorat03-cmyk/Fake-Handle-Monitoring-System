@@ -1,4 +1,7 @@
-Flask
+streamlit
 pandas 
 plotly
-gunicorn
+scikit-learn
+pillow
+requests
+beautifulsoup4
