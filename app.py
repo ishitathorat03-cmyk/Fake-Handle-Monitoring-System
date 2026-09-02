@@ -17,12 +17,15 @@ st.set_page_config(
 DATA_FILE = "data/handles.csv"
 
 df = pd.read_csv(DATA_FILE)
+if "monitoring_results" not in st.session_state:
+    st.session_state.monitoring_results = []
 
-monitoring_results = []
+    for _, row in df.iterrows():
+        st.session_state.monitoring_results.append(
+            analyze_handle(row)
+        )
 
-for _, row in df.iterrows():
-    monitoring_results.append(analyze_handle(row))
-
+monitoring_results = st.session_state.monitoring_results
 
 # -----------------------------
 # Header
