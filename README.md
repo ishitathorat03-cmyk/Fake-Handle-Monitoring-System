@@ -1,15 +1,17 @@
-# Fake Handle Monitoring System
+# Defence Logistics AI
 
-🛡️ An OSINT-based system for detecting and monitoring suspicious social media handles.
+AI-Based Predictive Logistics Demand Management System for non-sensitive defence logistics planning.
 
 ## 🚀 Live Working Prototype
 
-👉 [Open Live Demo](https://fake-handle-monitoring-system-9ychvk8jglpuyi4swj66xe.streamlit.app/)
+👉 https://defence-logistics-ai-stec2ioustep5zakfs2mch.streamlit.app
 
-## 💻 Technology Stack
+## Features
 
-- Python
-- Streamlit
-- Pandas
-- Scikit-learn
-- OSINT-based analysis
+- AI-based demand forecasting
+- Inventory and reorder-point analysis
+- Safety-stock calculation
+- Logistics risk scoring
+- Rainfall and transport-delay signals
+- Interactive Streamlit dashboard
+- CSV data upload
